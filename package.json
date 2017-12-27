@@ -1,0 +1,32 @@
+{
+  "name": "play-parcel",
+  "version": "0.0.1",
+  "scripts": {
+    "parcel:dev": "parcel app/index.html",
+    "parcel:build": "NODE_ENV=production parcel build app/index.html --public-url ./",
+    "webpack:dev": "webpack-dev-server",
+    "webpack:build": "NODE_ENV=production webpack -p"
+  },
+  "dependencies": {
+    "@types/lodash-es": "^4.17.0",
+    "@types/react": "^16.0.31",
+    "@types/react-dom": "^16.0.3",
+    "antd": "^3.0.3",
+    "lodash-es": "^4.17.4",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
+    "ui-component-loader": "^1.1.1",
+    "web-webpack-plugin": "^1.10.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7"
+  }
+}
