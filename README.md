@@ -31,8 +31,8 @@
 - Parcel默认支持模块热替换，真正的开箱即用；
 
 而反观Webpack，比Parcel要麻烦很多：
-- 需要写[一堆配置]()；
-- 需要再安装[一堆依赖]()；
+- 需要写[一堆配置](https://github.com/gwuhaolin/parcel-vs-webpack/blob/master/webpack.config.js)；
+- 需要再安装[一堆依赖](https://github.com/gwuhaolin/parcel-vs-webpack/blob/master/package.json)；
 - 不能简单的自动生成HTML；
 
 这个项目我用Parcel时花在构建配置上的时间不到一分钟，而用Webpack构建时花了5分钟去配置。
@@ -82,12 +82,16 @@ Npm官方并没有规定发布到Npm上的包需要符合哪些规范，这会�
 
 从以上数据可以看出：**Parcel构建速度快，但Parcel输出文件大**
 
-导致Parcel构建速度快的原因和iOS比Android用起来更流畅的原因类似：Parcel因为一体化内置，所以集成和优化的更好，而Webpack通过插件和Loader机制去让第三方扩展这会拉低性能；
+导致Parcel构建速度快的原因和iOS比Android用起来更流畅的原因类似：
+- Parcel因为一体化内置，所以集成和优化的更好，而Webpack通过插件和Loader机制去让第三方扩展这会拉低性能；
+- Parcel内置多进程并行构建，而Webpack默认是单进程构建（[Webpack也支持多进程](http://webpack.wuhaolin.cn/4%E4%BC%98%E5%8C%96/4-3%E4%BD%BF%E7%94%A8HappyPack.html)）；
 
-导致Parcel输出JS文件大的原因在于：1.不支持TreeShaking 2.构建出的JS中出现了所有文件的名称，如图：
+导致Parcel输出JS文件大的原因在于：
+- 不支持TreeShaking 
+- 构建出的JS中出现了所有文件的名称，如图：
+    ![](https://user-images.githubusercontent.com/5773264/34382680-8bd638e0-eb4b-11e7-9edf-9cbdf5c36b93.png)
 
-
-> 以上[项目完整源码可下载]()
+> 以上[项目完整源码可下载](https://github.com/gwuhaolin/parcel-vs-webpack)
 
 ### 总结
 现阶段的Parcel就像beta版的iPhone，看上去很美好但还不能用于生成环境，如果你现在就把Parcel用于生成环境，相信我你一定会踩很多坑。
